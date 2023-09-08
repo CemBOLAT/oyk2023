@@ -131,10 +131,11 @@
 * - ```
     apachectl -t
 * * Hatasız olduğunda syntax on yazması gerekir eper syntax hatası var ise hatanın olduğu dosya/dosyaları kontrol edin.
-
+<p>
 <img width="100" alt="Ekran Resmi 2023-09-08 14 24 49" src="https://github.com/CemBOLAT/oyk2023/assets/103999323/7984b812-0baf-4b23-8e72-09cfd61dd6cc">
-* /etc/hosts dosyası içine girip ip adresimizi sitemize yönlendiriyoruz.
+</p>
 
+* /etc/hosts dosyası içine girip ip adresimizi sitemize yönlendiriyoruz.
 * Son olarak aşağıdaki komutu kullanıp dosyanın içine girdikten sonra database bilgilerimizi tabloya ekliyince wordpress ile oluşan site çalışmaya başlayacak.
 * - ```
     mv /var/www/wp_first/wp-config-sample.php /var/www/wp_first/wp-config.php
