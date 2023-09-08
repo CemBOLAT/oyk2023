@@ -55,7 +55,7 @@
     systemctl status apache2
 * php ve php ile mariadb arasındaki bağlantıyı sağlamak için
 * * ```
-    apt-get php php-mysql
+    apt-get install php-mysql
 * * Son php paketini de kuruyoruz. [işlevi](https://www.php.net/manual/en/install.fpm.php)
 * php versionumuza göre paketi kuracağız
 * - ```
@@ -63,8 +63,8 @@
 <p align="center">
   <img width="300" alt="Ekran Resmi 2023-09-08 15 04 58" src="https://github.com/CemBOLAT/oyk2023/assets/103999323/fdc39d90-94e0-4947-a7cd-d06e61634acb">
 </p>
-* Servisi yüklemek için.
 
+* Servisi yüklemek için.
 * - ```
     apt install php8.2-fpm
 * Servisi başlatmak için.
@@ -73,6 +73,7 @@
 * Servisi sistem açılırken açmak için
 * - ```
     systemctl enable php8.2-fpm
+* Servisin durumunu görüntülemek için.
 * - ```
     systemctl status php8.2-fpm
 3. DATABASE Konfigrasyonu
