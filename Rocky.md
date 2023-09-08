@@ -156,3 +156,4 @@ define( 'DB_HOST', 'localhost' );
    systemctl reload php-fpm
    systemctl restart mysqld
 ```
+* Son olarak ip a yazıyoruz ve 127.0.0.1 dışındaki ipv4 adresimizi kopyalayıp tarayıcımıza yapıştırınca sitemiz açılacak
