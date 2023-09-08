@@ -1,7 +1,7 @@
 
 # DEBIAN
 
-1. Kuruluma başlamadan önce wget, tar ve vim kurmanın yanı sıra firewall servisini de (ufw) kurup, firewall servisinden 80 ve 443 portuna(opsiyonel) izin verilmesi gerekiyor.
+1. Kuruluma başlamadan önce ```su - root``` komutu ile root kullanıcına geçtikten sonra wget, tar ve vim kurmanın yanı sıra firewall servisini de (ufw) kurup, firewall servisinden 80 ve 443 portuna(opsiyonel) izin verilmesi gerekiyor.
 
 ## Paketlerin kurulumu
 <p align="center"> Paketiniz zaten yüklü ise aşağıdaki gibi bir ekran karşınıza çıkacak </p>
@@ -24,7 +24,7 @@
     ufw allow 443/tcp
 * Ufw servisinin durumunu görüntülemek için.
 * * ```
-    systemctl status ufw # servis durumunu görmek için
+    systemctl status ufw
 * Servisi başlatmak için 
 * * ```
     systemctl start ufw
@@ -63,11 +63,14 @@
 <p align="center">
   <img width="300" alt="Ekran Resmi 2023-09-08 15 04 58" src="https://github.com/CemBOLAT/oyk2023/assets/103999323/fdc39d90-94e0-4947-a7cd-d06e61634acb">
 </p>
+* Servisi yüklemek için.
 
 * - ```
     apt install php8.2-fpm
+* Servisi başlatmak için.
 * - ```
     systemctl start php8.2-fpm
+* Servisi sistem açılırken açmak için
 * - ```
     systemctl enable php8.2-fpm
 * - ```
@@ -107,7 +110,7 @@
 * - Bulunduğumuz klasördeki dosyaları listeliyoruz ve .tar.gz uzantılı dosya ile wordpress klasörünü siliyoruz.
 * - ```
     ls
-    rm -rf ./wordpress <indirdiğimiz dosya adı;
+    rm -rf ./wordpress <indirdiğimiz dosya adı>
 * /etc/apache2/sites-available/wp_first.conf konumundaki dosyanın içine aşağıdaki texti yazıyoruz.
 ```
 <VirtualHost *:80>
@@ -121,10 +124,17 @@
 </VirtualHost>
 ```
 * apachede sorun olup olmadığını kontrol etmek için
-* - ```apachectl -t```
+* - ```
+    apachectl -t
+* * Hatasız olduğunda syntax on yazması gerekir eper syntax hatası var ise hatanın olduğu dosya/dosyaları kontrol edin.
+<p>
+<img width="100" alt="Ekran Resmi 2023-09-08 14 24 49" src="https://github.com/CemBOLAT/oyk2023/assets/103999323/7984b812-0baf-4b23-8e72-09cfd61dd6cc">
+</p>
+
 * /etc/hosts dosyası içine girip ip adresimize sitemizi yönlendiriyoruz.
 * Son olarak aşağıdaki komutu kullanıp dosyanın içine girdikten sonra database bilgilerimizi tabloya ekliyince wordpress ile oluşan site çalışmaya başlayacak.
-* - ``` mv /var/www/html/wp-config-sample.php /var/www/html/wp-config.php  ```
+* - ```
+    mv /var/www/wp_first/wp-config-sample.php /var/www/wp_first/wp-config.php
 ```
 /** The name of the database for WordPress */
 define( 'DB_NAME', 'db_name' );
@@ -138,9 +148,10 @@ define( 'DB_PASSWORD', 'db_password' );
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );
 ```
-* Servisleri yeniden başlatıyoruz ve sitemiz çalışmaya hazır.
+* Servislerin yapılandırma dosyalarını tarayıp güncelliyoruz.
 ```
    systemctl reload apache2
    systemctl reload php8.2-fpm
    systemctl reload mariadb
 ```
+* Son olarak ```ip a``` komutunu çalıştırıyoruz ve 127.0.0.1 dışındaki ipv4 adresimizi kopyalayıp tarayıcımıza yapıştırınca sitemiz açılacak.
