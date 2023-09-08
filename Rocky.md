@@ -29,7 +29,7 @@
 * - ```
     firewall-cmd --add-port=443/tcp --permanent
 > [!Note]
-> Servisler için reload komutu yapılan değişikliklerin servisi yeniden başlatmak yerine servisin yapılandırma dosyalarını yeniden yükler ve günceller.
+> Servisler için reload komutu servisi yeniden başlatmak yerine servisin yapılandırma dosyalarını yeniden yükler ve günceller.
 * Servisin yapılandırma dosyalarını güncellemek için
 * * ```
     firewall-cmd --reload
