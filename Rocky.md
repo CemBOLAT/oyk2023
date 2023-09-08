@@ -118,7 +118,7 @@
 * /etc/httpd/conf.d/wp_first.conf konumundaki dosyanın içine aşağıdaki texti yazıyoruz.
 ```
 <VirtualHost *:80>
-    ServerName www.wp_first
+    ServerName www.wp_first.com
     DocumentRoot /var/www/wp_first
     <Directory /var/www/wp_first>
         Options Indexes FollowSymLinks
@@ -156,4 +156,5 @@ define( 'DB_HOST', 'localhost' );
    systemctl reload php-fpm
    systemctl restart mysqld
 ```
-* Son olarak ip a yazıyoruz ve 127.0.0.1 dışındaki ipv4 adresimizi kopyalayıp tarayıcımıza yapıştırınca sitemiz açılacak
+* Son olarak ```ip a``` yazıyoruz ve 127.0.0.1 dışındaki ipv4 adresimizi kopyalayıp tarayıcımıza yapıştırınca sitemiz açılacak.
+  
