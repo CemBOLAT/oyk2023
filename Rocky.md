@@ -1,7 +1,7 @@
 
 # ROCKY
 
-1. Kuruluma başlamadan önce wget, tar ve vim kurup, firewall servisinden 80 ve 443(opsiyonal) portuna izin verilmesi gerekiyor.
+1. Kuruluma başlamadan önce ```su - root``` komutu ile root kullanıcına geçtikten sonra  wget, tar ve vim kurup, firewall servisinden 80 ve 443(opsiyonal) portuna izin verilmesi gerekiyor.
 
 ## Paketlerin kurulumu
 <p align="center"> Paketler inerken aşağıdaki gibi bir ekran gelecek direkt 'y' tuşuna basarsınız paket inmeye başlayacak. </p>
